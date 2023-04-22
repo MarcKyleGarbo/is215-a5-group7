@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>ChatGPT Guessing Game - G7</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/vendor.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/main-override.css">
+
+    <!-- script
+    ================================================== -->
+    <script src="/static/js/modernizr.js"></script>
+    <script src="/static/js/pace.min.js"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+    <!-- home
+    ================================================== -->
+    <main class="s-home s-home--slides">
+        <div class="home-slider">
+            <div class="home-slider-img" style="background-image: url(/static/images/slides/slide-01.jpg);"></div>
+            <div class="home-slider-img" style="background-image: url(/static/images/slides/slide-02.png);"></div>
+            <div class="home-slider-img" style="background-image: url(/static/images/slides/slide-03.jpg);"></div>
+            <div class="home-slider-img" style="background-image: url(/static/images/slides/slide-04.jpg);"></div>
+            <div class="home-slider-img" style="background-image: url(/static/images/slides/slide-05.png);"></div>
+        </div>
+
+        <div class="overlay"></div>
+
+        <div id="ai-prompt">
+            <h1 id="aip-msg"></h1>
+            <br>
+            <div>
+                <button id="aip-confirm-btn">Confirm</button>
+                <button id="aip-play-btn">Play Again</button>
+                <button id="aip-res-btn">Restart Game</button>
+                <button id="aip-exit-btn">Exit Game</button>
+            </div>
+        </div>
+
+        <div class="home-content" id="playername-scr">
+            <div class="row home-content__main">
+                <div class="col" id="landing-main">
+                    <h1>ChatGPT-powered</h1>
+                    <h1>Guessing Game</h1>
+                    <h3>IS215 Activity 5 (Group 7)</h3>
+                    <div class="home-content__subscribe">
+                        <form id="player-form" class="group" novalidate="true" autocomplete="off">
+                            <input type="text" value="" name="player_name" class="email" id="mc-playername"
+                                placeholder="Player">
+                            <input type="submit" value="Start Game">
+                        </form>
+                    </div>
+                </div>
+            </div> <!-- end home-content -->
+        </div>
+
+        <div class="home-content text-center" id="ctg-round-scr">
+            <div class="row home-content__main">
+                <div class="col" id="landing-main">
+                    <h1 id="curr-ctgy">Category</h1>
+                    <h3 id="curr-round">Round 1</h3>
+                </div>
+            </div> <!-- end home-content -->
+        </div>
+
+        <div class="home-content home-cont-ovr" id="ingame-scr">
+            <div class="row home-content__main home-content__main-ovr">
+                <h1 id="round-curr-ctgy">Category</h1>
+                <h3 id="round-curr-round">Round 1</h3>
+            </div>
+
+            <div class="row home-content__main home-content__main-ovr" id="clues-div">
+            </div>
+
+            <div class="row home-content__main home-content__main-ovr">
+                <form id="submit-ans-form" class="group" novalidate="true" autocomplete="off">
+                    <input type="text" id="answer-input">
+                    <button type="submit" class="ld ld-ring ld-spin" id="submit-ans-btn">Submit Answer</button>
+                </form>
+            </div>
+        </div>
+
+
+
+    </main> <!-- end s-home -->
+
+    <!-- info
+    ================================================== -->
+    <a class="info-toggle" href="#0">
+        <span class="info-menu-icon"></span>
+    </a>
+    <div class="s-info ">
+        <div class="row info-wrapper">
+            <div class="col-seven tab-full info-main">
+                <h1>About</h1>
+                <p>
+                    Using the OpenAI API, I am powered by the Python Flask
+                    Webframework to be a guessing game.
+                </p>
+            </div>
+        </div> <!-- end info wrapper -->
+
+    </div> <!-- end s-info -->
+
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader">
+            <div class="line-scale-pulse-out">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="/static/js/jquery-3.2.1.min.js"></script>
+    <script src="/static/js/plugins.js"></script>
+    <script src="/static/js/main.js"></script>
+    <script src="/static/js/main-override.js"></script>
+</body>
+
+</html>
