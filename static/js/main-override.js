@@ -9,7 +9,7 @@ var playerName;
 function init() {
     hideAllPages();
     hideAIPButtons()
-    $("#playername-scr").show();
+    $("#playername-scr, .info-toggle").show();
     // // $("#ai-prompt").show();
     // $("#ingame-scr").show();
     // $("#submit-ans-form").show();
