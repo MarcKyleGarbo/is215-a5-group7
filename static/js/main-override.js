@@ -146,7 +146,6 @@ function loadRound(data) {
 
 function showClues() {       
     for (let clue in clues) {
-        console.log(clues[clue]);
         var clue_element = $(`<h3>${clues[clue]}</h3>`);
         $("#clues-div").append(clue_element);
         clue_element.hide();
