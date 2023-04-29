@@ -53,6 +53,7 @@ $(document).ready(function() {
         closeAIPrompt();
         $("#answer-input").prop("disabled", false);
         $("#submit-ans-btn").prop("disabled", false);
+        showClues2_fadeIn();
     });
 
     $("#aip-play-btn").click(function() {
@@ -138,7 +139,8 @@ function loadRound(data) {
         .done(function(){
             $("#ingame-scr").fadeIn("slow").delay(1000).promise()
             .done(function() {
-                showClues();
+                //showClues();
+                showClues2();
             });
         });
     });
@@ -157,6 +159,30 @@ function showClues() {
     }).promise().done(function() {
         $("#submit-ans-form").fadeIn("slow");
     });
+}
+
+function showClues2() {
+    
+    for (let clue in clues) {
+        var clue_element = $(`<h3>${clues[clue]}</h3>`);
+        $("#clues-div").append(clue_element);
+        clue_element.hide();
+        clue_element.attr("id", `cl-elem-${clue}`);
+        
+    }
+    showClues2_fadeIn();
+}
+
+function showClues2_fadeIn() {
+   
+    var loop_counter;
+    loop_counter = 11 - remaining_attempts;
+    for (let i = 0; i<loop_counter;i++){
+        $("#cl-elem-"+i).delay(1000).fadeIn("slow");
+    }
+    
+    $("#submit-ans-form").fadeIn("slow");
+    
 }
 
 function checkAnswer(ans_input) {
